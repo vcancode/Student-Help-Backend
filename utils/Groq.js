@@ -155,10 +155,6 @@ ${cleanedExamText}
 `;
 
   const finalPrompt = sanitizePrompt(rawPrompt);
-  console.log(finalPrompt);
-  
-
-  
 
   const response = await axios.post(
     "https://api.groq.com/openai/v1/chat/completions",
