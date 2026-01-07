@@ -95,12 +95,12 @@ Abstract paradigms may appear ONLY as side_topics.
 EXTRACTION RULES
 1. main_topic must map to a realistic 5–15 mark exam question.
 2. If a topic cannot be directly asked as a question → EXCLUDE it.
-3. For each main_topic, extract ≤3 MINIMAL prerequisites (≤10 min learnable).
+3. For each main_topic, extract ≤3 MINIMAL prerequisites from basics that a student must know to even work on that topic(≤10 min learnable).
 4. If SYLLABUS is provided → extract ONLY syllabus-aligned questions.
 5. If no syllabus → infer from repetition and phrasing in exam paper.
 6. Merge equivalent question patterns into ONE topic.
 7. Ignore instructions, marks, section labels, and rare one-off theory questions.
-8. Minimum Of 15 topics must be provided
+8. Minimum Of 20 topics must be provided
 
 SEARCH QUERIES (IMPORTANT)
 For each main_topic generate:

@@ -2,7 +2,7 @@ import express from "express"
 import multer from "multer";
 import FileRouter from "./routes/FileRoutes.js";
 import cors from "cors"
-import 'dotenv/config';
+
 
 
 const app=express();
@@ -19,7 +19,6 @@ app.use("/files",FileRouter);
 
 
 app.get("/",(req,res)=>{
-    console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
     res.send("hello");
 })
 

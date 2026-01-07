@@ -3,6 +3,7 @@ import mammoth from "mammoth";
 import { createWorker } from "tesseract.js";
 import ImageConvert from "../controllers/PdfConverter.js"; // Your Cloudinary-based utility
 
+
 /* ---------- OCR WORKER ---------- */
 let worker;
 
