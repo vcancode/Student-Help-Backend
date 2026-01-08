@@ -59,20 +59,7 @@ async function extractAndAppendText(file, accumulator) {
       return;
     }
 
-    // 3. SCANNED PDF HANDLING (No selectable text found)
-    // We call your ImageConvert utility which handles Cloudinary upload + Page OCR
-    try {
-      const ocrResults = await ImageConvert(file);
-      
-      if (ocrResults && ocrResults.length > 0) {
-        // We take the combined text from all pages
-        accumulator.push(ocrResults[0].text);
-      }
-    } catch (error) {
-      console.error("Scanned PDF OCR failed:", error.message);
-      throw new Error(`Failed to process scanned PDF: ${error.message}`);
-    }
-    return;
+    
   }
 
   // 4. DOCX HANDLING
