@@ -10,6 +10,6 @@ const upload = multer({
 });
 
 export const uploadExamFiles = upload.fields([
-  { name: "syllabus", maxCount: 1 }, 
+  { name: "syllabus", maxCount: 5 }, 
   { name: "papers", maxCount: 10 }   
 ]);
