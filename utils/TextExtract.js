@@ -58,8 +58,7 @@ async function extractAndAppendText(file, accumulator) {
       accumulator.push(textResult.text);
       return;
     }
-
-    
+  
   }
 
   // 4. DOCX HANDLING
