@@ -133,7 +133,6 @@ OUTPUT FORMAT (STRICT JSON)
       "topic_query": "",
       "playlist_query": "",
       "question_types": [],
-      "common mistakes":["","",""]- 3 common mistakes that students do
     }
   ]
 }
