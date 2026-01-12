@@ -66,63 +66,56 @@ export async function analyzeExamText(finalText, syllabusText) {
   }
 
   const rawPrompt = `
-You are an EXAM-ORIENTED SYLLABUS ANALYSIS ASSISTANT.
+You are an EXAM QUESTION PATTERN EXTRACTION ASSISTANT.
 
-Input:
-• University EXAM PAPER TEXT (always)
-• SYLLABUS TEXT (optional)
+INPUT
+- EXAM PAPER TEXT (required)
+- SYLLABUS TEXT (optional)
 
-Goal:
+OBJECTIVE
 Extract REPEATED, MARKS-ORIENTED EXAM QUESTION PATTERNS.
-Do NOT extract chapters or abstract topics.
+Do NOT extract chapters or abstract themes.
 
-CORE RULE
-Each main_topic MUST be a QUESTION-SOLVING UNIT that can be:
-solved / derived / constructed / traced / implemented in an exam.
+CORE CONSTRAINT
+Each main_topic must be a QUESTION-SOLVING UNIT suitable for a 5–15 mark exam
+(derivable / constructible / traceable / implementable).
+Abstract concepts allowed ONLY as side_topics.
 
-Abstract paradigms may appear ONLY as side_topics.
+RULES
+1. Minimum 20 main_topic entries.
+2. Sort topics from foundational → advanced.
+3. Each main_topic: ≤3 minimal prerequisites (≤10 min learnable).
+4. If syllabus exists → ONLY syllabus-aligned topics.
+5. If no syllabus → infer from repetition & phrasing.
+6. Merge equivalent question patterns.
+7. Ignore instructions, marks, sections, and rare theory-only questions.
 
-EXTRACTION RULES
-1. main_topic must map to a realistic 5–15 mark exam question.
-2. sort the json file in a priority order from begenning topics to the complex topics
-3. For each main_topic, extract ≤3 MINIMAL prerequisites from basics that a student must know to even work on that topic(≤10 min learnable).
-4. If SYLLABUS is provided → extract ONLY syllabus-aligned questions.
-5. If no syllabus → infer from repetition and phrasing in exam paper.
-6. Merge equivalent question patterns into ONE topic.
-7. Ignore instructions, marks, section labels, and rare one-off theory questions.
-8. Minimum Of 20 topics must be provided
+SEARCH QUERIES (MANDATORY)
+For each main_topic:
+- topic_query: narrow “how to solve” query
+- playlist_query: broader parent topic
+(No platform names.)
 
-SEARCH QUERIES (IMPORTANT)
-For each main_topic generate:
-• topic_query → narrow query to learn ONLY how to solve that question.
-• playlist_query → broader parent topic the question belongs to.
+FOR EACH MAIN_TOPIC RETURN
+- priority: high | medium | low
+- difficulty: easy | moderate | hard
+- definition: ~40 words (exam-solving strategy)
+- side_topics: ≤3
+- topic_query
+- playlist_query
+- question_types: 3–4 realistic exam-style patterns
 
-Examples:
-topic_query: "LCS DP table construction"
-playlist_query: "dynamic programming algorithms"
+STRICT OUTPUT
+- Question-solving topics only
+- ≤3 side_topics
+- No invented syllabus content
+- Output ONLY valid JSON
+- No explanations, markdown, or comments
 
-Do NOT include platform names.
-
-FOR EACH MAIN_TOPIC PROVIDE
-• priority: high | medium | low
-• difficulty: easy | moderate | hard
-• definition: ~40 words explaining HOW the question is solved (exam strategy)
-• side_topics: max 3 minimal prerequisites
-• topic_query
-• playlist_query
-• question_types: 3–4 realistic exam-style question patterns
-
-STRICT OUTPUT RULES
-• main_topic must be question-solving, not abstract.
-• ≤3 side_topics only.
-• No invented syllabus chapters.
-• Output ONLY valid JSON.
-• No explanations, no markdown, no comments.
-
-OUTPUT FORMAT (STRICT JSON)
+OUTPUT FORMAT
 {
-  "subject": "<subject name or null>",
-  "subject_query": "<full subject search query>",
+  "subject": "<string or null>",
+  "subject_query": "<string>",
   "topics": [
     {
       "main_topic": "",
@@ -132,7 +125,7 @@ OUTPUT FORMAT (STRICT JSON)
       "definition": "",
       "topic_query": "",
       "playlist_query": "",
-      "question_types": [],
+      "question_types": []
     }
   ]
 }
