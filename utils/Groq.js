@@ -145,7 +145,6 @@ ${cleanedExamText}
 `;
 
   const finalPrompt = sanitizePrompt(rawPrompt);
-  console.log(finalPrompt);
   
 
   const response = await axios.post(
