@@ -1,6 +1,5 @@
 import axios from "axios";
 import "dotenv/config";
-import { enrichGroqJson } from "./YoutubeFetcher.js";
 
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
 
@@ -91,11 +90,6 @@ RULES
 6. Merge equivalent question patterns.
 7. Ignore instructions, marks, sections, and rare theory-only questions.
 
-SEARCH QUERIES (MANDATORY)
-For each main_topic:
-- topic_query: narrow “how to solve” query
-- playlist_query: broader parent topic
-(No platform names.)
 
 FOR EACH MAIN_TOPIC RETURN
 - priority: high | medium | low
@@ -123,7 +117,6 @@ OUTPUT FORMAT
       "difficulty": "",
       "side_topics": [],
       "definition": "",
-      "topic_query": "",
       "question_types": []
     }
   ]
@@ -158,15 +151,21 @@ ${cleanedExamText}
     .replace(/<think>[\s\S]*?<\/think>/gi, "")
     .trim();
 
-  let parsed,YoutubeAppende;
+  let parsed;
   try {
     parsed = JSON.parse(output);
-     YoutubeAppende=enrichGroqJson(parsed);
+    parsed.topics.map(
+      (topic)=>{
+    topic.completed=false
+      }
+    );
   } catch {
     throw new Error("LLM returned invalid JSON");
   }
 
-  return YoutubeAppende;
+
+
+  return parsed;
 }
 
 export default analyzeExamText;

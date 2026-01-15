@@ -2,10 +2,12 @@ import express from "express"
 import multer from "multer";
 import FileRouter from "./routes/FileRoutes.js";
 import cors from "cors"
-
+import connectDB from "./Models/db.js";
+import UserRouter from "./routes/UserRouter.js";
 
 
 const app=express();
+await connectDB()
 //?necessary middlewares
 app.use(cors());
 app.use(express.json());
@@ -15,6 +17,8 @@ app.use(express.urlencoded({extended:true,limit:"50mb"}));
 //?router uses
 
 app.use("/files",FileRouter);
+app.use("/user",UserRouter);
+
 
 
 
