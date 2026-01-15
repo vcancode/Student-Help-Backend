@@ -72,7 +72,10 @@ export const enrichGroqJson = async (req, res) => {
 
     // 5️⃣ Update document in MongoDB
     document.jsonFile = groqJson;
+
     document.markModified("jsonFile"); // !because of mixed data type we have to inform mongodb that it has been modified 
+
+    await document.save();
    
 
     // 6️⃣ Update user's YouTube usage timestamp
