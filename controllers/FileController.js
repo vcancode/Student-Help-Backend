@@ -231,11 +231,11 @@ const saveDocument = async (req, res) => {
 
     // 🔥 Required for Mixed type
     document.markModified("jsonFile");
-    await document.save();
+    const newdoc = await document.save();
 
     return res.status(200).json({
       message: "DOCUMENT_UPDATED",
-      documentId: document._id
+      document:newdoc
     });
 
   } catch (error) {
