@@ -74,8 +74,6 @@ server/
 ├── routes/
 ├── middlewares/
 ├── utils/
-├── uploads/
-├── app.js
 └── server.js
 ```
 
@@ -86,8 +84,8 @@ server/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/clutchprep-backend.git
-cd clutchprep-backend
+git clone https://github.com/your-username/clutch-prep-backend.git
+cd clutch-prep-backend
 ```
 
 ---
@@ -230,7 +228,6 @@ http://localhost:5000
 Frontend for ClutchPrep is maintained separately.
 
 👉 **Frontend Repo:**
-**(Add link here)**
 
 ```
 https://github.com/your-username/clutchprep-frontend
@@ -244,20 +241,3 @@ This project is licensed for educational and research purposes.
 Commercial usage should include proper API usage compliance.
 
 ---
-
-## 👤 Author
-
-Built with focus on **exam efficiency, not content overload**.
-
-**ClutchPrep** — *Study only what wins you marks.*
-
----
-
-If you want:
-
-* API documentation
-* Postman collection
-* Architecture diagram
-* Deployment README (Render / Railway)
-
-say **which one** next.
