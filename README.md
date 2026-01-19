@@ -235,9 +235,6 @@ https://github.com/your-username/clutchprep-frontend
 
 ---
 
-## 📜 License
-
-This project is licensed for educational and research purposes.
-Commercial usage should include proper API usage compliance.
+## 📜 License - [LICENSE](https://github.com/vcancode/clutch-prep-backend/blob/main/LICENSE)
 
 ---
