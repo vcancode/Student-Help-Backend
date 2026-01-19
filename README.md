@@ -84,7 +84,7 @@ server/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/clutch-prep-backend.git
+git clone https://github.com/vcancode/clutch-prep-backend.git
 cd clutch-prep-backend
 ```
 
@@ -230,7 +230,7 @@ Frontend for ClutchPrep is maintained separately.
 👉 **Frontend Repo:**
 
 ```
-https://github.com/your-username/clutchprep-frontend
+https://github.com/vcancode/clutch-prep-frontend
 ```
 
 ---
