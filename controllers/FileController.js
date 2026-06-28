@@ -75,6 +75,8 @@ const FetchQuestions = async (req, res) => {
       syllabusText = syllabusChunks.join("\n");
     }
 
+    console.log(finalText);
+    
     // Analyze with Groq
     const groqdata = await analyzeExamText(finalText, syllabusText);
 
@@ -188,10 +190,14 @@ OUTPUT FORMAT (STRICT JSON ONLY):
     const output = response.data.choices[0].message.content
       .replace(/<think>[\s\S]*?<\/think>/gi, "")
       .trim();
+      console.log(output);
+      
 
     let quizJson;
     try {
       quizJson = JSON.parse(output);
+      console.log(quizJson);
+      
     } catch {
       return res.status(500).json({ error: error.message});
     }

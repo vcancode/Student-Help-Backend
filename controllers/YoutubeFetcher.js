@@ -43,6 +43,9 @@ export const enrichGroqJson = async (req, res) => {
 
     // 2️⃣ Enforce daily YouTube limit (1 per day)
     const ONE_DAY = 24* 60 * 60 * 1000;
+    const now=new Date();
+    console.log(now,user.youtubeLastFetchAt);
+    
     if (
       user.youtubeLastFetchAt &&
       Date.now() - user.youtubeLastFetchAt.getTime() < ONE_DAY

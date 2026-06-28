@@ -82,7 +82,7 @@ Each main_topic must be a QUESTION-SOLVING UNIT suitable for a 5–15 mark exam
 Abstract concepts allowed ONLY as side_topics.
 
 RULES
-1. strictly provide 15 main_topic entries.
+1. strictly provide 3 main_topic entries.
 2. Sort topics from foundational → advanced.
 3. Each main_topic: ≤3 minimal prerequisites (≤10 min learnable).
 4. If syllabus exists → ONLY syllabus-aligned topics.
@@ -153,6 +153,8 @@ ${cleanedExamText}
     .replace(/<think>[\s\S]*?<\/think>/gi, "")
     .trim();
 
+    console.log(output);
+    
   let parsed;
   try {
     parsed = JSON.parse(output);
