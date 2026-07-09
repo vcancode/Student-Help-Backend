@@ -146,7 +146,7 @@ INPUT:
     )}
 
 TASK:
-Generate EXACTLY 20 MCQ questions for exam practice.
+Generate EXACTLY 10 MCQ questions for exam practice.
 
 RULES:
 - Each question must be derived from the given topics
